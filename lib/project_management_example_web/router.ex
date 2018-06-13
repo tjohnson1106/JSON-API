@@ -13,6 +13,11 @@ defmodule ProjectManagementExampleWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :json_api do
+    plug :accepts, ["json-api"]
+    plug JaSerializer.Deserializer
+  end
+
 
 
   # custom stacks.
@@ -20,7 +25,7 @@ defmodule ProjectManagementExampleWeb.Router do
     pipe_through :api
 
    resources "/projects", ProjectController, only: [:index, :show]
-   resources "/documents", DocumentController, only: [:index, :show,]
+   resources "/documents", DocumentController, only: [:index, :show, :create]
 
 
   end
