@@ -1,6 +1,7 @@
 defmodule ProjectManagementExample.Management.Project do
   use Ecto.Schema
   import Ecto.Changeset
+  alias ProjectManagementExample.Management.Project
 
 
   schema "projects" do

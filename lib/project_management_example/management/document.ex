@@ -10,7 +10,7 @@ defmodule ProjectManagementExample.Management.Document do
     field :view_count, :integer
     field :published, :boolean
 
-    belongs_to :project, ProjectManagementExample.Management.Project
+    belongs_to :project, ProjectManagementExample.Project
 
     timestamps()
   end
